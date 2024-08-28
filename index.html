@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Salário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-image: url(https://conteudo.imguol.com.br/c/noticias/a1/2021/11/22/stonks-significado-1637616290106_v2_615x300.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    div {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content:center ;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border: 5px solid black;
+        border-radius: 50px;
+        gap: 20px;
+        width: 25%;
+        margin: auto;
+        margin-top: 100px;
+        background-color: whitesmoke;
+        flex-wrap: wrap;
+        background-image: url(https://usagif.com/wp-content/uploads/gifs/raining-money-29.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        font-weight:900;}
+
+    
+    button{
+        margin-bottom: 20px;
+        width: 150px;
+     height: 30px;
+    }
+
+  </style>
+</head>
+<body>
+
+ <div>
+    <h1>CALCULADORA DE SALÁRIO</h1>
+    <label for="nome">NOME DO FUNCIONÁRIO:</label>
+    <input type="text" id="nome" required><br><br>
+
+    <label for="valorHora">VALOR POR HORA:</label>
+    <input type="number" id="valorHora" required><br><br>
+
+    <label for="horasTrabalhadas">HORAS TRABALHADAS:</label>
+    <input type="number" id="horasTrabalhadas"  required><br><br>
+
+    <button type="button" onclick="calcularSalario()">Calcular Salário</button>
+</div>
+
+  <h2 id="resultado"></h2>
+
+  <script>
+    function calcularSalario() {
+     
+      var nome = document.getElementById("nome").value;
+      var valorHora = document.getElementById("valorHora").valueAsNumber;
+      var horasTrabalhadas = document.getElementById("horasTrabalhadas").valueAsNumber;
+
+    
+      var salario = valorHora * horasTrabalhadas;
+
+      var resultadoElement = document.getElementById("resultado");
+      resultadoElement.style.color = "red";
+      resultadoElement.innerHTML = `O funcionário ${nome} trabalhou por ${horasTrabalhadas} horas.<hr>`;
+      resultadoElement.innerHTML += `E receberá R$ ${salario.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

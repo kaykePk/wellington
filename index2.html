@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Coisas que eu vou fazer nas férias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-image: url(https://www.quintoandar.com.br/guias/wp-content/uploads/2021/11/Calcadao-de-Oscasco-osasco-sp-viviane-giacometti-1.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    div {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 5px solid black;
+      border-radius: 50px;
+      width: 25%;
+      margin: auto;
+      margin-top: 300px;
+      background-color: whitesmoke;
+      flex-wrap: wrap;
+      background-image: url(https://media.tenor.com/zn5K__9kLAgAAAAM/pombo-caminhando.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      font-weight: 900;
+    }
+    
+    button {
+      margin-bottom: 20px;
+      width: 150px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="conteudo">
+  <h1>5 COISAS QUE VOCÊ VAI FAZER NAS FÉRIAS</h1>
+  <ol>
+    <li>
+      <input type="text" id="atividade1" required><br><br>
+    </li>
+    <li>
+      <input type="text" id="atividade2" required><br><br>
+    </li>
+    <li>
+      <input type="text" id="atividade3" required><br><br>
+    </li>
+    <li>
+      <input type="text" id="atividade4" required><br><br>
+    </li>
+    <li>
+      <input type="text" id="atividade5" required><br><br>
+    </li>
+    <button type="button" onclick="mostrarAtividades()">Mostrar Atividades </button>
+    <button type="button" onclick="limparCampos()">Limpar Dados</button>
+    <h2 id="resultado"></h2>
+  </ol>
+</div>
+
+<script>
+  var imagemInicial = "https://www.quintoandar.com.br/guias/wp-content/uploads/2021/11/Calcadao-de-Oscasco-osasco-sp-viviane-giacometti-1.jpg"
+  var imagemAtual = imagemInicial;
+
+  function mostrarAtividades() {
+    var atividade1 = document.getElementById("atividade1").value;
+    var atividade2 = document.getElementById("atividade2").value;
+    var atividade3 = document.getElementById("atividade3").value;
+    var atividade4 = document.getElementById("atividade4").value;
+    var atividade5 = document.getElementById("atividade5").value;
+
+    var resultadoElement = document.getElementById("resultado");
+    resultadoElement.style.color = "red";
+    resultadoElement.innerHTML = `Atividades nas férias:<br>`;
+    resultadoElement.innerHTML += `1. ${atividade1}<br>`;
+    resultadoElement.innerHTML += `2. ${atividade2}<br>`;
+    resultadoElement.innerHTML += `3. ${atividade3}<br>`;
+    resultadoElement.innerHTML += `4. ${atividade4}<br>`;
+    resultadoElement.innerHTML += `5. ${atividade5}<br>`;
+
+
+    var body = document.body;
+    var novaImagemURL = "https://64.media.tumblr.com/5d8f8e2dd2ecea9dc193510055f260dd/eec53a807db46922-37/s540x810/9e1371e4810f567d431a6123c94b0ecd43275877.gifv"
+    body.style.backgroundImage = `url(${novaImagemURL})`;
+
+ 
+    imagemAtual = novaImagemURL;
+  }
+
+  function limparCampos() {
+    document.getElementById("atividade1").value = "";
+    document.getElementById("atividade2").value = "";
+    document.getElementById("atividade3").value = "";
+    document.getElementById("atividade4").value = "";
+    document.getElementById("atividade5").value = "";
+    document.getElementById("resultado").innerHTML = "";
+
+
+    var body = document.body;
+    body.style.backgroundImage = `url(${imagemInicial})`;
+
+    imagemAtual = imagemInicial;
+  }
+</script>
+
+</body>
+</html>
